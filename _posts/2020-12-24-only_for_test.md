@@ -3,4 +3,4 @@
 
 [博客地址](https://zhangfeng-fitz.github.io)
 
-![第一张图片](https://github.com/zhangfeng-fitz/zhangfeng-fitz.github.io/blob/master/picture/only_for_test.png)
+![第一张图片](/picture/only_for_test.png)
