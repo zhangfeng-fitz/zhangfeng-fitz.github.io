@@ -410,13 +410,13 @@ baidu_analytics: e8643dc1b0b7ade21fe7331bcc4f6412
 #duoshuo_shortname:
 
 # Disqus
-disqus:
-  enable: true
-  shortname: Fitz
-  count: true
-  # hide comments (visitors need to click to load the comments)
-  # count need to be false when hide is true
-  hide: false
+# disqus:
+#   enable: true
+#   shortname: Fitz
+#   count: true
+#   # hide comments (visitors need to click to load the comments)
+#   # count need to be false when hide is true
+#   hide: false
 
 # <wildfire>
 wildfire:
@@ -518,21 +518,21 @@ duoshuo_info:
 
 # Facebook SDK Support.
 # https://github.com/iissnan/hexo-theme-next/pull/410
-facebook_sdk:
-  enable: false
-  app_id:       #<app_id>
-  fb_admin:     #<user_id>
-  like_button:  #true
-  webmaster:    #true
+# facebook_sdk:
+#   enable: false
+#   app_id:       #<app_id>
+#   fb_admin:     #<user_id>
+#   like_button:  #true
+#   webmaster:    #true
 
-# Facebook comments plugin
-# This plugin depends on Facebook SDK.
-# If facebook_sdk.enable is false, Facebook comments plugin is unavailable.
-facebook_comments_plugin:
-  enable: false
-  num_of_posts: 10  # min posts num is 1
-  width: 100%       # default width is 550px
-  scheme: light     # default scheme is light (light or dark)
+# # Facebook comments plugin
+# # This plugin depends on Facebook SDK.
+# # If facebook_sdk.enable is false, Facebook comments plugin is unavailable.
+# facebook_comments_plugin:
+#   enable: false
+#   num_of_posts: 10  # min posts num is 1
+#   width: 100%       # default width is 550px
+#   scheme: light     # default scheme is light (light or dark)
 
 # VKontakte API Support.
 # To get your AppID visit https://vk.com/editapp?act=create
