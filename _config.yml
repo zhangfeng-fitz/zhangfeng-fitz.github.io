@@ -3,6 +3,12 @@
 ## Docs: https://jekyllrb.com/docs/configuration/
 # ---------------------------------------------------------------
 
+leancloud_visitors:
+  enable: true
+  app_id: #<AppID>
+  app_key: #<AppKEY>
+
+
 
 # Site
 title: Fitz
