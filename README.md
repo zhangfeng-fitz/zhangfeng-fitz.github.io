@@ -1,37 +1,58 @@
-## Welcome to GitHub Pages
+# Strata Reloaded
 
-You can use the [editor on GitHub](https://github.com/zhangfeng-fitz/zhangfeng-fitz.github.io/edit/master/README.md) to maintain and preview the content for your website in Markdown files.
+Simple, clean personal blogging template for Jekyll based on Strata by HTML5 UP.
 
-Whenever you commit to this repository, GitHub Pages will run [Jekyll](https://jekyllrb.com/) to rebuild the pages in your site, from the content in your Markdown files.
+![Strata Reloaded template screenshot](images/_screenshot.png)
 
-### Markdown
+## Features
 
-Markdown is a lightweight and easy-to-use syntax for styling your writing. It includes conventions for
+* Parallax background effect
+* Lightbox gallery
+* Pre-styled components
+* Blog with pagination
+* Configurable footer
+* Optimized for editing in [CloudCannon](http://cloudcannon.com/)
+* RSS/Atom feed
+* SEO tags
+* Google Analytics
+* Webmaster Verification
 
-```markdown
-Syntax highlighted code block
+## Develop
 
-# Header 1
-## Header 2
-### Header 3
+1. Add your site and author details in `_config.yml`.
+2. Add your Google Analytics key to `_config.yml`.
+3. Get a workflow going to see your site's output (with [CloudCannon](https://app.cloudcannon.com/) or Jekyll locally).
 
-- Bulleted
-- List
+## Develop
 
-1. Numbered
-2. List
+Urban was built with [Jekyll](http://jekyllrb.com/) version 3.3.1, but should support newer versions as well.
 
-**Bold** and _Italic_ and `Code` text
+Install the dependencies with [Bundler](http://bundler.io/):
 
-[Link](url) and ![Image](src)
-```
+~~~bash
+$ bundle install
+~~~
 
-For more details see [GitHub Flavored Markdown](https://guides.github.com/features/mastering-markdown/).
+Run `jekyll` commands through Bundler to ensure you're using the right versions:
 
-### Jekyll Themes
+~~~bash
+$ bundle exec jekyll serve
+~~~
 
-Your Pages site will use the layout and styles from the Jekyll theme you have selected in your [repository settings](https://github.com/zhangfeng-fitz/zhangfeng-fitz.github.io/settings). The name of this theme is saved in the Jekyll `_config.yml` configuration file.
+## Editing
 
-### Support or Contact
+Strata Reloaded is already optimized for adding, updating and removing posts and footer elements in [CloudCannon](https://app.cloudcannon.com/).
 
-Having trouble with Pages? Check out our [documentation](https://docs.github.com/categories/github-pages-basics/) or [contact support](https://github.com/contact) and we’ll help you sort it out.
+### Posts
+
+* Add, update or remove a post in the *Posts* collection.
+* Change the defaults when new posts are created in `_posts/_defaults.md`.
+
+### Footer
+
+* Exposed as a data file to give clients better access.
+* Set in the *Data* / *Footer* section.
+
+## License
+
+Free for personal and commercial use under the CCA 3.0 license. See LICENSE file for additional information and terms of use. This theme was adapted from Strata by HTML5 UP for use with [CloudCannon](http://cloudcannon.com) by [Comfusion LLC](http://comfusionllc.com).
