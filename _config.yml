@@ -2,7 +2,7 @@
 # Jekyll & Global Configuration
 ## Docs: https://jekyllrb.com/docs/configuration/
 # ---------------------------------------------------------------
-# 使用文档：http://theme-next.simpleyyt.com/
+
 
 # Site
 title: Fitz
@@ -80,7 +80,7 @@ plugins:
 favicon: /assets/images/author.jpeg
 
 # Set default keywords (Use a comma to separate)
-keywords: "Jekyll, NexT, simpleyyt, yitao"
+keywords: "Jekyll, NexT, zhangfeng, fitz"
 
 # Set rss to false to disable feed link.
 # Leave rss as empty to use site's feed link.
@@ -383,7 +383,7 @@ baidu_analytics: 70b7e141dfc0ea2b204682f94ab2e01a
 # Disqus
 disqus:
   enable: true
-  shortname: simpleyyt
+  shortname: Fitz
   count: true
   # hide comments (visitors need to click to load the comments)
   # count need to be false when hide is true
