@@ -3,10 +3,12 @@
 ## Docs: https://jekyllrb.com/docs/configuration/
 # ---------------------------------------------------------------
 
+# Show number of visitors to each article.
+# You can visit https://leancloud.cn get AppID and AppKey.  
 leancloud_visitors:
   enable: true
-  app_id: #<AppID>
-  app_key: #<AppKEY>
+  app_id: OqhlW0StxSuyh2kcOrjaEH0s-gzGzoHsz  #<AppID>
+  app_key: y304NK03qYBeRQql0HiyMM3d   #<AppKEY>
 
 
 
