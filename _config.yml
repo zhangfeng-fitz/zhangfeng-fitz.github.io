@@ -152,8 +152,8 @@ menu_icons:
 # ---------------------------------------------------------------
 
 # Schemes
-scheme: Muse #大量留白，黑白主调
-#scheme: Mist #单栏外观
+#scheme: Muse #大量留白，黑白主调
+scheme: Mist #单栏外观
 #scheme: Pisces #双栏外观
 
 
