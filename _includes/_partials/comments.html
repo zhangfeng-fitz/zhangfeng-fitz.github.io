@@ -13,13 +13,6 @@ var gitment = new Gitment({
 gitment.render('gitmentContainer');
 </script> -->
 
-<script>
-  var idcomments_acct = '15fe90db7037d567781808f816338214';
-  var idcomments_post_id;
-  var idcomments_post_url;
-  </script>
-  <span id="IDCommentsPostTitle" style="display:none"></span>
-  <script type='text/javascript' src='https://www.intensedebate.com/js/genericCommentWrapperV2.js'></script>
 
 {% if page.comments %}
   <div class="comments" id="comments">
@@ -53,6 +46,33 @@ gitment.render('gitmentContainer');
       <div id="uyan_frame"></div>
     {% elsif site.livere_uid %}
       <div id="lv-container" data-id="city" data-uid="{{ site.livere_uid }}"></div>
+
+      {% elseif theme.wildfire.enable %}
+      <style type="text/css">
+        .wildfire_thread a {border-bottom: none}
+      </style>
+      <div class="wildfire_thread"></div>
+      <script type="text/javascript">
+        var wildfireConfig = () => ({
+          databaseProvider: '{{ theme.wildfire.database_provider }}',
+          databaseConfig: {
+          {% if (theme.wildfire.database_provider) === 'wilddog' %}
+            siteId: '{{ theme.wildfire.site_id }}'
+          {% elseif (theme.wildfire.database_provider) === 'firebase' %}
+            apiKey: '{{ theme.wildfire.api_key }}',
+            authDomain: '{{ theme.wildfire.auth_domain }}',
+            databaseURL: '{{ theme.wildfire.database_url }}',
+            projectId: '{{ theme.wildfire.project_id }}',
+            storageBucket: '{{theme.wildfire.storage_bucket}}',
+            messagingSenderId: '{{theme.wildfire.messaging_sender_id}}'
+          {% endif %}
+          },
+          theme: '{{theme.wildfire.theme}}',
+          locale: '{{theme.wildfire.locale}}'
+        })
+      </script>
+      <script src='https://unpkg.com/wildfire/dist/wildfire.auto.js'></script>
+
     {% elsif site.changyan.appid and site.changyan.appkey %}
       <div id="SOHUCS"></div>
     {% elsif site.wildfire.enable %}
