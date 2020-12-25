@@ -549,11 +549,11 @@ duoshuo_info:
 # # Facebook comments plugin
 # # This plugin depends on Facebook SDK.
 # # If facebook_sdk.enable is false, Facebook comments plugin is unavailable.
-# facebook_comments_plugin:
-#   enable: false
-#   num_of_posts: 10  # min posts num is 1
-#   width: 100%       # default width is 550px
-#   scheme: light     # default scheme is light (light or dark)
+facebook_comments_plugin:
+  enable: true
+  num_of_posts: 10  # min posts num is 1
+  width: 100%       # default width is 550px
+  scheme: light     # default scheme is light (light or dark)
 
 # VKontakte API Support.
 # To get your AppID visit https://vk.com/editapp?act=create
