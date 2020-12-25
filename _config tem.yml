@@ -3,6 +3,56 @@
 ## Docs: https://jekyllrb.com/docs/configuration/
 # ---------------------------------------------------------------
 
+# Wildfire Support
+# wildfire:
+#   ## 开启Wildfire支持
+#   enable: true
+#   ## 主题颜色，目前可选值为light/dark两种，默认为light
+#   theme: light
+#   ## 系统语言，目前可选值为en/zh-CN两种，默认为en
+#   locale: zh-CN
+#   ## Wilddog配置
+#   # database_provider: wilddog
+#   # site_id: site_id
+#   ## Firebase配置
+#   database_provider: firebase
+#   api_key: AIzaSyChI0E44ZxELFJwaaQftgAntnzhGmsVPQ0
+#   auth_domain: blogcomment-3f4ec.firebaseapp.com
+#   database_url: https://blogcomment-3f4ec-default-rtdb.firebaseio.com
+#   project_id: blogcomment-3f4ec
+#   storage_bucket: blogcomment-3f4ec.appspot.com
+#   messaging_sender_id: 83868256797
+
+
+# Show PV/UV of the website/page with busuanzi.
+# Get more information on http://ibruce.info/2015/04/04/busuanzi/
+busuanzi_count:
+  # count values only if the other configs are false
+  enable: true
+  # custom uv span for the whole site
+  site_uv: true
+  site_uv_header: <i class="fa fa-user"></i> 访问人数
+  site_uv_footer: 人
+  # custom pv span for the whole site
+  site_pv: true
+  site_pv_header: <i class="fa fa-eye"></i> 总访问量
+  site_pv_footer: 次
+  # custom pv span for one page only
+  page_pv: true
+  page_pv_header: <i class="fa fa-file-o"></i> 阅读数
+  page_pv_footer:
+
+
+
+# Show number of visitors to each article.
+# You can visit https://leancloud.cn get AppID and AppKey.  
+leancloud_visitors:
+  enable: true
+  app_id: OqhlW0StxSuyh2kcOrjaEH0s-gzGzoHsz  #<AppID>
+  app_key: y304NK03qYBeRQql0HiyMM3d   #<AppKEY>
+
+
+
 # Site
 title: Fitz
 subtitle: Zhang Feng's Blog
@@ -19,7 +69,7 @@ baseurl:
 permalink: /:year/:month/:day/:title/
 
 # Pagination
-paginate: 10
+paginate: 20
 #paginate_path: "/page:num/"
 #archive:
   #paginate: 10
@@ -35,7 +85,7 @@ paginate: 10
 exclude: [".rvmrc", ".rbenv-version", "README.md", "Rakefile", "changelog.md", "Gemfile", "Gemfile.lock", "README_en.md", "vendor"]
 
 # Separator
-excerpt_separator: <!-- more -->
+excerpt_separator: <!--more-->
 
 # Code Highlighter
 ## 'pygments' is unsupported on GitHub Pages now.
@@ -43,9 +93,9 @@ highlighter: rouge
 highlight:
   line_number: true
 
-#### Markdown Processors
+#### down Processors
 ## 'redcarpet' is unsupported on GitHub Pages now.
-markdown: kramdown
+#markdown: maruku
 kramdown:
     input: GFM
 
@@ -79,7 +129,7 @@ plugins:
 favicon: /assets/images/favicon.jpeg
 
 # Set default keywords (Use a comma to separate)
-keywords: "Jekyll, NexT, Zhang Feng, Fitz"
+keywords: "Jekyll, NexT, zhangfeng, fitz"
 
 # Set rss to false to disable feed link.
 # Leave rss as empty to use site's feed link.
@@ -151,9 +201,9 @@ menu_icons:
 # ---------------------------------------------------------------
 
 # Schemes
-scheme: Muse
-#scheme: Mist
-#scheme: Pisces
+scheme: Muse #大量留白，黑白主调
+#scheme: Mist #单栏外观
+#scheme: Pisces #双栏外观
 
 
 # ---------------------------------------------------------------
@@ -213,8 +263,6 @@ font:
 # Social Links
 # Key is the link label showing to end users.
 # Value is the target link (E.g. GitHub: https://github.com/iissnan)
-#social:
-  #LinkLabel: Link
 social:
   GitHub: https://github.com/zhangfeng-fitz
   CSDN: https://blog.csdn.net/qq_29798939?spm=1001.2014.3001.5343
@@ -233,7 +281,6 @@ social_icons:
   GitHub: github
   Twitter: twitter
   Weibo: weibo
-  CSDN: csdn
 
 
 # Sidebar Avatar
@@ -384,13 +431,13 @@ baidu_analytics: e8643dc1b0b7ade21fe7331bcc4f6412
 #duoshuo_shortname:
 
 # Disqus
-disqus:
-  enable: false
-  shortname:
-  count: true
-  # hide comments (visitors need to click to load the comments)
-  # count need to be false when hide is true
-  hide: false
+# disqus:
+#   enable: true
+#   shortname: Fitz
+#   count: true
+#   # hide comments (visitors need to click to load the comments)
+#   # count need to be false when hide is true
+#   hide: false
 
 # <wildfire>
 wildfire:
@@ -441,11 +488,12 @@ changyan:
 # Support for gitalk comments system.
 gitalk:
   enable: false
-  clientID: # 54730ddf7b9420460c03
-  clientSecret: # c05684701b25ff1c19ea0c01ce4d80c125e0707d
-  repo: # colingpt.github.io
-  owner: # colingpt
-  admin: # colingpt
+  clientID: f741b8c88c14088fe247 # 54730ddf7b9420460c03
+  clientSecret: 6d8a638328309ed7e46d5e72bcc55a8a2d2a30a7 # c05684701b25ff1c19ea0c01ce4d80c125e0707d
+  repo: zhangfeng-fitz.github.io # colingpt.github.io
+  owner: zhangfeng-fitz # colingpt
+  admin: zhangfeng-fitz # colingpt
+  distractionFreeMode: false
 
 # Baidu Share
 # Available value:
@@ -464,10 +512,10 @@ gitalk:
 
 # Google Webmaster tools verification setting
 # See: https://www.google.com/webmasters/
-#google_site_verification:
+google_site_verification: hxyd6b4vb-uzYY6dVuzz4KXhScoVoEUjtiRWYSJVlrY
 
 # Google Analytics
-#google_analytics:
+google_analytics: UA-67994495-1
 
 # Yandex Webmaster tools verification setting
 # See: https://webmaster.yandex.ru/
@@ -492,18 +540,18 @@ duoshuo_info:
 
 # Facebook SDK Support.
 # https://github.com/iissnan/hexo-theme-next/pull/410
-facebook_sdk:
-  enable: false
-  app_id:       #<app_id>
-  fb_admin:     #<user_id>
-  like_button:  #true
-  webmaster:    #true
+# facebook_sdk:
+#   enable: false
+#   app_id:       #<app_id>
+#   fb_admin:     #<user_id>
+#   like_button:  #true
+#   webmaster:    #true
 
-# Facebook comments plugin
-# This plugin depends on Facebook SDK.
-# If facebook_sdk.enable is false, Facebook comments plugin is unavailable.
+# # Facebook comments plugin
+# # This plugin depends on Facebook SDK.
+# # If facebook_sdk.enable is false, Facebook comments plugin is unavailable.
 facebook_comments_plugin:
-  enable: false
+  enable: true
   num_of_posts: 10  # min posts num is 1
   width: 100%       # default width is 550px
   scheme: light     # default scheme is light (light or dark)
@@ -534,21 +582,21 @@ leancloud_visitors:
 
 # Show PV/UV of the website/page with busuanzi.
 # Get more information on http://ibruce.info/2015/04/04/busuanzi/
-busuanzi_count:
-  # count values only if the other configs are false
-  enable: true
-  # custom uv span for the whole site
-  site_uv: true
-  site_uv_header: <i class="fa fa-user"></i> 访问人数
-  site_uv_footer: 人
-  # custom pv span for the whole site
-  site_pv: true
-  site_pv_header: <i class="fa fa-eye"></i> 总访问量
-  site_pv_footer: 次
-  # custom pv span for one page only
-  page_pv: true
-  page_pv_header: <i class="fa fa-file-o"></i> 阅读数
-  page_pv_footer:
+# busuanzi_count:
+#   # count values only if the other configs are false
+#   enable: false
+#   # custom uv span for the whole site
+#   site_uv: true
+#   site_uv_header: <i class="fa fa-user"></i>
+#   site_uv_footer:
+#   # custom pv span for the whole site
+#   site_pv: true
+#   site_pv_header: <i class="fa fa-eye"></i>
+#   site_pv_footer:
+#   # custom pv span for one page only
+#   page_pv: true
+#   page_pv_header: <i class="fa fa-file-o"></i>
+#   page_pv_footer:
 
 
 # Tencent analytics ID
