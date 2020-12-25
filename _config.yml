@@ -4,24 +4,24 @@
 # ---------------------------------------------------------------
 
 # Wildfire Support
-wildfire:
-  ## 开启Wildfire支持
-  enable: true
-  ## 主题颜色，目前可选值为light/dark两种，默认为light
-  theme: light
-  ## 系统语言，目前可选值为en/zh-CN两种，默认为en
-  locale: zh-CN
-  ## Wilddog配置
-  # database_provider: wilddog
-  # site_id: site_id
-  ## Firebase配置
-  database_provider: firebase
-  api_key: AIzaSyChI0E44ZxELFJwaaQftgAntnzhGmsVPQ0
-  auth_domain: blogcomment-3f4ec.firebaseapp.com
-  database_url: https://blogcomment-3f4ec-default-rtdb.firebaseio.com
-  project_id: blogcomment-3f4ec
-  storage_bucket: blogcomment-3f4ec.appspot.com
-  messaging_sender_id: 83868256797
+# wildfire:
+#   ## 开启Wildfire支持
+#   enable: true
+#   ## 主题颜色，目前可选值为light/dark两种，默认为light
+#   theme: light
+#   ## 系统语言，目前可选值为en/zh-CN两种，默认为en
+#   locale: zh-CN
+#   ## Wilddog配置
+#   # database_provider: wilddog
+#   # site_id: site_id
+#   ## Firebase配置
+#   database_provider: firebase
+#   api_key: AIzaSyChI0E44ZxELFJwaaQftgAntnzhGmsVPQ0
+#   auth_domain: blogcomment-3f4ec.firebaseapp.com
+#   database_url: https://blogcomment-3f4ec-default-rtdb.firebaseio.com
+#   project_id: blogcomment-3f4ec
+#   storage_bucket: blogcomment-3f4ec.appspot.com
+#   messaging_sender_id: 83868256797
 
 
 # Show PV/UV of the website/page with busuanzi.
