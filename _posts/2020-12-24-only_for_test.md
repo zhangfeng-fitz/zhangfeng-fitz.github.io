@@ -1,4 +1,4 @@
-comment:no
+comments: false
 ***
 这是我的第一篇博文，试试相关功能好不好用
 
