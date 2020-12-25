@@ -126,7 +126,7 @@ plugins:
 # ---------------------------------------------------------------
 
 # Put your favicon.ico into `assets/` directory.
-favicon: /assets/images/author.jpeg
+favicon: /assets/images/favicon.jpeg
 
 # Set default keywords (Use a comma to separate)
 keywords: "Jekyll, NexT, zhangfeng, fitz"
@@ -137,7 +137,7 @@ keywords: "Jekyll, NexT, zhangfeng, fitz"
 rss:
 
 # Specify the date when the site was setup
-since: 2020.12.24
+since: 2020
 
 # icon between year and author @Footer
 authoricon: heart
