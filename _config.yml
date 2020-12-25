@@ -493,6 +493,7 @@ gitalk:
   repo: zhangfeng-fitz.github.io # colingpt.github.io
   owner: zhangfeng-fitz # colingpt
   admin: zhangfeng-fitz # colingpt
+  distractionFreeMode: false
 
 # Baidu Share
 # Available value:
