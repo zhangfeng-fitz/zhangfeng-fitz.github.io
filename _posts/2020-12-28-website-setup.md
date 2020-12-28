@@ -2,7 +2,7 @@
 categories:
   - Network
 tags:
-  - 'tcp'
+  - 'GitHub Pages'
 
 info: TCP的拥塞控制算法
 date: '2020-12-25'
