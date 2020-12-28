@@ -4,8 +4,8 @@ categories:
 tags:
   - 'Github Pages', 'jekyll'
 info: 
-date: '2020-12-28'
-slug: tcp-congestion
+date: '2020-12-28' 
+slug: github-website
 title: 使用GitHub搭建个人网站
 ---
 
