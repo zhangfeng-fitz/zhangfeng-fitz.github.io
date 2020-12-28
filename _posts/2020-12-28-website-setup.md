@@ -1,16 +1,16 @@
 ---
 categories:
-  - 个人网站
+  - Network
 tags:
-  - 'GitHub Pages','jekyll'
+  - 'tcp'
 
-info: 
-date: '2020-12-28'
+info: TCP的拥塞控制算法
+date: '2020-12-25'
 type: post
 layout: post
 published: true
 sha: bd7bdf473f6c04d3c0882b6a1732942d0f768875
-slug: website-setup
+slug: tcp-congestion
 title: GitHub搭建个人网站
 ---
 
