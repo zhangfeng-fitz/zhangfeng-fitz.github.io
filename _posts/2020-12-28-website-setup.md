@@ -3,8 +3,9 @@ categories:
   - 个人网站
 tags:
   - 'GitHub Pages', 'jekyll'
-title: 使用GitHub搭建个人网站
+title: GitHub搭建个人网站
 date: '2020-12-28'
+published: true
 ---
 
 
