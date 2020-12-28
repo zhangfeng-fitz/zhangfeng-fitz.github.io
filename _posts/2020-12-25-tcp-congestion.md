@@ -4,8 +4,8 @@ categories:
 tags:
   - 'tcp'
 
-info: 
-date: '2015-9-15'
+info: TCP的拥塞控制算法
+date: '2020-12-25'
 type: post
 layout: post
 published: true
