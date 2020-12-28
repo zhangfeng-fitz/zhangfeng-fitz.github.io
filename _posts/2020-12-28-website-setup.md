@@ -12,6 +12,8 @@ title: GitHub搭建个人网站
 
 <!-- more -->
 
+***
+
 使用GitHub搭建网站可以分为以下几步：
 
 （1）注册GitHub账号
