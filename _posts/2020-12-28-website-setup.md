@@ -1,16 +1,13 @@
 ---
-​---
 categories:
   - 个人网站
 tags:
   - 'GitHub Pages', 'jekyll'
 title: 使用GitHub搭建个人网站
 date: '2020-12-28'
-type: post
-layout: post
-slug: website-setup
-
 ---
+
+
 
 拥塞控制是发送方使用的流量控制，拥塞控制主要有四种算法：慢启动、拥塞避免、快速重传与快速恢复。
 
