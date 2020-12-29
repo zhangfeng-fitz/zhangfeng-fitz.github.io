@@ -133,9 +133,13 @@ busuanzi_count:
 
 ![](/img/20201229/oauth.png)
 
-填写完毕后点击注册得到新的OAuth App，复制得到的`ClientID`和`Client Secret`到配置文件中，并修改`repo、owner、admin`等字段即可。
+填写完毕后点击注册得到新的OAuth App。
 
 ![](/img/20201229/gitalk.png)
+
+### 修改相关配置
+
+复制得到的`ClientID`和`Client Secret`到配置文件中，并修改`repo、owner、admin`等字段即可。
 
 ```yaml
 gitalk:
