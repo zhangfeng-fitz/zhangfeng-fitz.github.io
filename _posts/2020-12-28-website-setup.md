@@ -86,6 +86,8 @@ sudo gem install jekyll bundler
 
 添加完成后，等待一段时间即可使用域名访问网站。测试可以访问后，在**Repository**的**Settings**中点击**Enforce HTTPS**以开启HTTPS保证安全性（此设置需要在保存**Custom domain**一段时间后才可以进行设置）。
 
+在**Repository**中新建**CNAME**文件，内容为购买的域名.
+
 ![](/img/20201228/settings.jpg)
 
 最终定义域名的目的为可以通过**GitHub**域名，自定义域名等进行访问。以本站为例，可以通过<https://zhangfeng-fitz.github.io>、<https://zhangfeng-fitz.com>、<https://www.zhangfeng-fitz.com>等来进行访问。
