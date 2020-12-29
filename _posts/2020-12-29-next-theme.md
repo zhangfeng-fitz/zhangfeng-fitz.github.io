@@ -2,11 +2,11 @@
 categories:
 
   - 个人网站
-    tags:
+tags:
   - ‘Next Theme'
-    date: '2020-12-29'
-    slug: website-next
-    title: 为网站更换Next主题并进行相关配置并撰写博文
+date: '2020-12-29'
+slug: website-next
+title: 为网站更换Next主题并进行相关配置并撰写博文
 ---
 
 GitHub Pages的默认主题不太美观，且需要自己编写代码实现前端相关功能，较为繁琐。Next主题为黑白配色，风格极简，是个人非常喜欢的一款主题。本文介绍如何使用Next主题进行个人网站配置。
