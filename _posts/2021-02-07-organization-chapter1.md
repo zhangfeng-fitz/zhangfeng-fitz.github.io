@@ -5,6 +5,7 @@ tags:
   - 计算机组成原理
 date: ‘2021-02-07'
 slug: organization-chapter1
+mathjax: true
 title: 计算机组成原理（一）
 ---
 
@@ -448,9 +449,11 @@ MDR32位 则存储容量 64K×32位
 - 补码
 
   - 纯整数的补码定义
-
+    - $x_{[原]}=\left\{\begin{matrix}
+      0,x & 2^n>x \geq 0\\ 
+      2^{n+1}+x=x^{n+1}-|x| & 0 \geq x>-2^n
+      \end{matrix}\right.(mod 2^{n+1})$
   - 纯小数的补码定义
-
   - 当真值为正时，补码与原码相同；
     当真值为负时，补码(原码) <-> 原码（补码）符号位不变，其余按位取反，末位再加1
 
