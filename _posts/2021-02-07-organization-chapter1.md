@@ -435,7 +435,7 @@ MDR32位 则存储容量 64K×32位
   - 纯整数的原码定义
     - $x_{[原]}=\left\{\begin{matrix}
       0,x & 2^n>x \geq 0\\ 
-      2^n-x & 0 \geq x>-2^n
+      2^n-x & 0 \geq x>-2^n 
       \end{matrix}\right.$
     - x为真值，n为整数的位数
     - 若字长为$n+1$，则原码整数的表示范围为$-(2^n-1)\leq x \leq 2^n-1$（关于原点对称）
