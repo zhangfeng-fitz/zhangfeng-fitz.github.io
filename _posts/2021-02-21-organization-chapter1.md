@@ -3,10 +3,10 @@ categories:
   - 计算机组成原理
 tags:
   - 计算机组成原理
-date: ‘2021-02-07'
-slug: organization-chapter1
+date: ‘2021-02-21'
+slug: organization
 mathjax: true
-title: 计算机组成原理（一）
+title: 计算机组成原理
 ---
 
 计组作为计算机专业的重要专业课，感觉以前掌握的不太好，如今重新复习，并列提纲如下，望能起到温故而知新之效。
