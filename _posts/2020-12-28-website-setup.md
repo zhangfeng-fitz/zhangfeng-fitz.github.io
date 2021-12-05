@@ -30,17 +30,17 @@ title: GitHub搭建个人网站
 
 # 注册GitHub账号
 
-​		 此步骤较为简单，登陆[Github](https://github.com/)网站，点击右上角的**Sign Up**，编辑用户名、邮箱地址和密码即可注册。注册后登陆邮箱进行验证即完成注册。注：用户名不易更改，谨慎起名。
+​         此步骤较为简单，登陆[Github](https://github.com/)网站，点击右上角的**Sign Up**，编辑用户名、邮箱地址和密码即可注册。注册后登陆邮箱进行验证即完成注册。注：用户名不易更改，谨慎起名。
 
 ![](/img/20201228/signup.jpg)
 
 # 建立个人网站代码仓库
 
-​		注册并登录后，点击**Create a Repository**，并在**Repository name**处填入网站的域名，格式为`username.github.io`，将`username`更改为自己的用户名（只能是注册账号时的用户名），仓库类型选择Public，即可完成创建。
+​        注册并登录后，点击**Create a Repository**，并在**Repository name**处填入网站的域名，格式为`username.github.io`，将`username`更改为自己的用户名（只能是注册账号时的用户名），仓库类型选择Public，即可完成创建。
 
 ![](/img/20201228/repository.jpg)
 
-​		在浏览器中输入**Repository name**即可登录。此时网站为默认状态，非常简陋，接下来为网站更改主题。
+​        在浏览器中输入**Repository name**即可登录。此时网站为默认状态，非常简陋，接下来为网站更改主题。
 
 # 更换网站主题（可选）
 
@@ -66,7 +66,7 @@ brew install ruby
 
 安装完成后安装Jekyll。
 
-```shell 
+```shell
 sudo gem install jekyll bundler
 ```
 
