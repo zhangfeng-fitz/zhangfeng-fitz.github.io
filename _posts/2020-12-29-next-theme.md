@@ -83,7 +83,7 @@ since: 2013
 
 ## 设置动画效果
 
-```yaml 
+```yaml
 use_motion: true  # 开启动画效果
 use_motion: false # 关闭动画效果
 ```
@@ -104,7 +104,7 @@ Next可以借助第三方服务来扩展其功能，包括评论、访问量统�
 
 访问量统计功能主要通过[不蒜子](https://busuanzi.ibruce.info/)实现，Next已内置对于不蒜子的支持，因此可以直接通过更改配置文件实现。将`busuanzi_count`中的`enable`值改为`true`即可，`header`和`footer`字段可以用来设置显示格式。
 
-```yaml 
+```yaml
 busuanzi_count:
   # count values only if the other configs are false
   enable: true
