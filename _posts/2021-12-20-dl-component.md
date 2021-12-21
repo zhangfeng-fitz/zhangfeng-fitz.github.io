@@ -313,8 +313,218 @@ print(net[2].weight.data[0] == net[4].weight.data[0])
 
 # 自定义层
 
+深度学习框架中提供了部分已经定义好的层，但是很可能遇到现有框架中不存在的层，因此需要自定义层。
+
+## 不带参数的层
+
+下面的代码定义了一个没有任何参数的层。`CenteredLayer`类要从其输入中减去均值。 要构建它，我们只需继承基础层类并实现前向传播功能
+
+```python
+import torch
+import torch.nn.functional as F
+from torch import nn
+
+
+class CenteredLayer(nn.Module):
+    def __init__(self):
+        super().__init__()
+
+    def forward(self, X):
+        return X - X.mean()
+```
+
+向该层提供一些数据，验证是否能够按预期工作
+
+```python
+layer = CenteredLayer()
+layer(torch.FloatTensor([1, 2, 3, 4, 5]))
+```
+
+上述创建的层可以合并到更复杂的模型中。
+
+```python
+net = nn.Sequential(nn.Linear(8, 128), CenteredLayer())
+```
+
+## 带参数的层
+
+自定义的层不仅可以带参数，也可以不带参数，参数可以通过模型训练调整。可以使用内置函数创建参数。以下代码实现自定义版本的全连接层。
+
+```python
+class MyLinear(nn.Module):
+    def __init__(self, in_units, units):
+        super().__init__()
+        self.weight = nn.Parameter(torch.randn(in_units, units))
+        self.bias = nn.Parameter(torch.randn(units,))
+    def forward(self, X):
+        linear = torch.matmul(X, self.weight.data) + self.bias.data
+        return F.relu(linear)
+```
+
+使用该类访问其模型参数
+
+```python
+linear = MyLinear(5, 3)
+linear.weight
+```
+
+使用自定义层执行前向传播运算
+
+```python
+linear(torch.rand(2, 5))
+```
+
+使用自定义层构建模型
+
+```python
+net = nn.Sequential(MyLinear(64, 8), MyLinear(8, 1))
+net(torch.rand(2, 64))
+```
+
 # 读写文件
 
+## 加载和保存张量
+
+对于单个张量可以直接调用load和save函数去读写他们。这两个函数都要求提供一个名称，save要求将要保存的变量作为输入。
+
+```python
+import torch
+from torch import nn
+from torch.nn import functional as F
+
+x = torch.arange(4)
+torch.save(x, 'x-file')
+```
+
+将存储在文件中的数据读回内存，也可以存储张量列表在读回内存
+
+```python
+x2 = torch.load('x-file')
+x2
+```
+
+```python
+y = torch.zeros(4)
+torch.save([x, y],'x-files')
+x2, y2 = torch.load('x-files')
+```
+
+写入或读取从字符串映射到张量的字典，可用于读取或写入模型中的所有权重。
+
+```python
+mydict = {'x': x, 'y': y}
+torch.save(mydict, 'mydict')
+mydict2 = torch.load('mydict')
+```
+
+## 加载和保存模型参数
+
+上节介绍了保存单个权重向量。如果想保存整个模型以便于以后加载，单独保存每个向量会很麻烦。因此，深度学习框架提供了内置函数来保存和加载整个网络，以多层感知机为例。
+
+```python
+class MLP(nn.Module):
+    def __init__(self):
+        super().__init__()
+        self.hidden = nn.Linear(20, 256)
+        self.output = nn.Linear(256, 10)
+
+    def forward(self, x):
+        return self.output(F.relu(self.hidden(x)))
+
+net = MLP()
+X = torch.randn(size=(2, 20))
+Y = net(X)
+```
+
+将模型的参数存储在文件中
+
+```python
+torch.save(net.state_dict(), 'mlp.params')
+```
+
+如果要回复模型，可以直接读取文件中的参数，不需要初始化模型参数
+
+```python
+clone = MLP()
+clone.load_state_dict(torch.load('mlp.params'))
+clone.eval()
+```
+
 # GPU
+
+本节介绍GPU计算常用的一些命令
+
+`!nvidia-smi`——查看显卡信息
+
+可以指定用于存储和计算的设备，如CPU或GPU。默认情况下，张量在内存中创建，然后使用CPU创建。
+
+
+
+在PyTorch中，CPU和GPU可以用`torch.device('cpu')` 和`torch.device('cuda')`表示。 应该注意的是，`cpu`设备意味着所有物理CPU和内存， 这意味着PyTorch的计算将尝试使用所有CPU核心。 然而，`gpu`设备只代表一个卡和相应的显存。 如果有多个GPU，我们使用`torch.device(f'cuda:{i}')` 来表示第𝑖块GPU（𝑖从0开始）。 另外，`cuda:0`和`cuda`是等价的。
+
+可以使用如下代码查看GPU的数量
+
+```python
+torch.cuda.device_count()
+```
+
+使用如下代码查询张量所在的设备
+
+```python
+x = torch.tensor([1, 2, 3])
+x.device
+```
+
+如果需要对多项进行操作，则所有项必须在同一个设备上，否则框架不知道在哪里计算，在哪里存储结果。
+
+## 在GPU上创建张量
+
+在GPU上创建存储张量可以使用如下代码。以下代码首先在第一个GPU上创建张量X（需要注意X不能超过GPU显存限制），然后在第二个GPU上创建随机张量
+
+```python
+X = torch.ones(2, 3, device=try_gpu())
+X
+```
+
+```python
+Y = torch.rand(2, 3, device=try_gpu(1))
+Y
+```
+
+## 复制
+
+如果要计算`X+Y`，需要决定在哪里执行操作。因为两个张量不在同一个设备上，所以需要进行复制，可以将X传输到第二个GPU然后进行操作，如果直接进行求和会导致异常。
+
+```python
+Z = X.cuda(1)
+print(X)
+print(Z)
+Y + Z
+```
+
+通过输出可以看出此时Z在第二个GPU上，复制成功，可以进行求和。
+
+
+
+特别地，假设Z已经存在于第二个GPU，此时执行`Z.cuda(1)`会返回Z，而不是复制并分配新内存。
+
+
+
+容易知道，在不同GPU设备之间传输数据比进行计算慢得多，所以，需要小心拷贝操作。此外，如果打印张量或者将其转换为Numpy时，如果数据不在内存，需要先复制到内存，会导致额外的开销。
+
+## 神经网络在GPU上运行
+
+类似于张量，神经网络模型也可以指定设备，以下代码可以将模型参数放在GPU上。
+
+```python
+net = nn.Sequential(nn.Linear(3, 1))
+net = net.to(device=try_gpu())
+```
+
+调用同GPU上的张量，在同GPU上进行计算
+
+```python
+net(X)
+```
 
 
